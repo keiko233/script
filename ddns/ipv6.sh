@@ -9,6 +9,8 @@ CLOUDFALRE_DNS_RECORD_ID=""
 INTERFACE_NAME=""
 GET_NTH_ADDRESS=""
 
+OPENWRT_ADDRESS=""
+OPENWRT_USERNAME=""
 OPENWRT_FIREWALL_RULE_ID=""
 
 LogOut() {
@@ -64,11 +66,11 @@ CheckJqInstalled() {
 
 PutOpenwrtFirewall() {
   LogOut "INFO" "在Openwrt中放行${IPV6ADDRESS}地址"
-  ssh root@10.0.0.1 "uci del firewall.@rule[${OPENWRT_FIREWALL_RULE_ID}].dest_ip; \
+  ssh ${OPENWRT_USERNAME}@${OPENWRT_ADDRESS} "uci del firewall.@rule[${OPENWRT_FIREWALL_RULE_ID}].dest_ip; \
     uci add_list firewall.@rule[${OPENWRT_FIREWALL_RULE_ID}].dest_ip='${IPV6ADDRESS}'; \
     uci commit; \
     uci changes; "
-  OPENWRT_FIREWALL_DEST_IP=$(ssh root@10.0.0.1 "uci show firewall.@rule[${OPENWRT_FIREWALL_RULE_ID}].dest_ip" | awk -F \' '{print $2}')
+  OPENWRT_FIREWALL_DEST_IP=$(ssh ${OPENWRT_USERNAME}@${OPENWRT_ADDRESS} "uci show firewall.@rule[${OPENWRT_FIREWALL_RULE_ID}].dest_ip" | awk -F \' '{print $2}')
   LogOut "INFO" "防火墙放行地址已修改为: ${OPENWRT_FIREWALL_DEST_IP}"
 }
 
