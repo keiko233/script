@@ -12,7 +12,13 @@ GET_NTH_ADDRESS=""
 OPENWRT_FIREWALL_RULE_ID=""
 
 LogOut() {
-  echo -e "$(date "+%H:%M:%S") [$1] $2"
+  if [ "$1" = "ERROR" ]; then
+    echo -e "$(date "+%H:%M:%S") \033[31m[$1]\033[0m $2"
+  elif [ "$1" = "WARNING" ]; then
+    echo -e "$(date "+%H:%M:%S") \033[33m[$1]\033[0m $2"
+  else
+    echo -e "$(date "+%H:%M:%S") \033[32m[$1]\033[0m $2"
+  fi
 }
 
 GetInterfaceIPv6Address() {
