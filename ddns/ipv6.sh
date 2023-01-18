@@ -54,8 +54,8 @@ PutAddress2Cloudflare() {
 }
 
 CheckJqInstalled() {
-  local isInstall=$(apt list --installed | grep jq/stable | awk '{print $4}' | sed -n 1p)
-  if [ "$isInstall" = "[installed]" ]; then
+  local isInstall=$(dpkg-query -l | grep jq | awk '{print $2}' | sed -n 1p)
+  if [ "$isInstall" = "jq" ]; then
     LogOut "INFO" "检测到jq的存在，跳过安装"
   else
     LogOut "ERROR" "在没有检测到jq的安装，即将安装jq依赖"
