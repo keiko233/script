@@ -24,23 +24,23 @@ LogOut() {
 }
 
 GetInterfaceIPv6Address() {
-  LogOut "INFO" "获取IPv6地址"
+  LogOut "INFO" "正在获取网卡的IPv6地址"
   IPV6ADDRESS=$(ip -6 addr show dev ${INTERFACE_NAME} | grep global | awk '{print $2}' | awk -F "/" '{print $1}' | sed -n ${GET_NTH_ADDRESS}p)
   LogOut "INFO" "当前IPv6地址为: ${IPV6ADDRESS}"
 }
 
 GetAddressFormCloudflare() {
-  LogOut "INFO" "获取当前DNS记录的地址"
+  LogOut "INFO" "正在获取当前DNS记录的地址"
   CLOUDFLARE_IP_CONTENT=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/${CLOUDFALRE_ZONES_ID}/dns_records?type=AAAA&name=${CLOUDFALRE_DOMAIN}&content=127.0.0.1&page=1&per_page=100&order=type&direction=desc&match=any" \
     -H "X-Auth-Email: ${CLOUDFALRE_USER_MAIL}" \
     -H "X-Auth-Key: ${CLOUDFALRE_GLOBAL_API}" \
     -H "Content-Type: application/json" | \
     jq --raw-output '.result[0].content')
-  LogOut "INFO" "获取当前DNS记录地址为: ${CLOUDFLARE_IP_CONTENT}"
+  LogOut "INFO" "获取到当前DNS记录地址为: ${CLOUDFLARE_IP_CONTENT}"
 }
 
 PutAddress2Cloudflare() {
-  LogOut "INFO" "更新Cloudflare上的IPv6地址为: ${IPV6ADDRESS}"
+  LogOut "INFO" "正在更新Cloudflare上的IPv6地址为: ${IPV6ADDRESS}"
   CLOUDFLARE_RETURN_STATUS=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/${CLOUDFALRE_ZONES_ID}/dns_records/${CLOUDFALRE_DNS_RECORD_ID}" \
     -H "X-Auth-Email: ${CLOUDFALRE_USER_MAIL}" \
     -H "X-Auth-Key: ${CLOUDFALRE_GLOBAL_API}" \
@@ -58,13 +58,13 @@ CheckJqInstalled() {
   if [ "$isInstall" = "jq" ]; then
     LogOut "INFO" "检测到jq的存在，跳过安装"
   else
-    LogOut "ERROR" "在没有检测到jq的安装，即将安装jq依赖"
+    LogOut "WARNING" "没有检测到jq的安装，即将安装jq依赖"
     apt update -y && apt install -y jq
   fi
 }
 
 PutOpenwrtFirewall() {
-  LogOut "INFO" "在Openwrt中放行${IPV6ADDRESS}地址"
+  LogOut "INFO" "正在在Openwrt中放行${IPV6ADDRESS}地址"
   ssh ${OPENWRT_USERNAME}@${OPENWRT_ADDRESS} "uci del firewall.@rule[${OPENWRT_FIREWALL_RULE_ID}].dest_ip; \
     uci add_list firewall.@rule[${OPENWRT_FIREWALL_RULE_ID}].dest_ip='${IPV6ADDRESS}'; \
     uci commit; \
@@ -81,7 +81,7 @@ ShellRun() {
     PutAddress2Cloudflare
     PutOpenwrtFirewall
   else 
-    LogOut "INFO" "无需更新地址"
+    LogOut "INFO" "IPv6地址无变化，无需更新"
   fi
 }
 
