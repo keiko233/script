@@ -1,0 +1,62 @@
+{
+  "Device Information": [
+    "ro.product.",
+    "ro.build.",
+    "ro.vendor."
+  ],
+  "System Configuration": [
+    "persist.sys.",
+    "persist.service.",
+    "persist.radio."
+  ],
+  "Network Configuration": [
+    "net.",
+    "wifi.",
+    "mobile."
+  ],
+  "Screen Settings": [
+    "persist.display.",
+    "display.",
+    "sys.display."
+  ],
+  "Audio Settings": [
+    "persist.audio.",
+    "audio.",
+    "sys.audio."
+  ],
+  "Security Settings": [
+    "persist.security.",
+    "security.",
+    "sys.security."
+  ],
+  "Developer Options": [
+    "persist.dev.",
+    "debug.",
+    "sys.dev."
+  ],
+  "Battery Settings": [
+    "persist.battery.",
+    "battery.",
+    "sys.battery."
+  ],
+  "Storage Settings": [
+    "persist.storage.",
+    "storage.",
+    "sys.storage."
+  ],
+  "Timezone Settings": [
+    "persist.timezone.",
+    "timezone.",
+    "sys.timezone."
+  ],
+  "Language Settings": [
+    "persist.language.",
+    "language.",
+    "sys.language."
+  ],
+  "Others": [
+    "debug.",
+    "log.",
+    "ro.secure."
+  ]
+}
