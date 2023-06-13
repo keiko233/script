@@ -1,4 +1,100 @@
 {
+  "RIL Configuration": [
+    "rild.",
+    "ril.",
+    "persist.vendor.radio."
+  ],
+  "Device initialized": [
+    "DEVICE_PROVISIONED"
+  ],
+  "IMS Configuration": [
+    "ro.telephony.",
+    "telephony."
+  ],
+  "Qualcomm HW Configuration": [
+    "qcom.hw."
+  ],
+  "Dalvik Configuration": [
+    "dalvik."
+  ],
+  "system props for the cne module": [
+    "persist.vendor.cne.feature"
+  ],
+  "system props for the MM modules": [
+    "media.stagefright.",
+    "media.aac_51_output_enabled",
+    "mmp.enable.3g2",
+    "mm.enable.smoothstreaming",
+    "media.settings.xml"
+  ],
+  "codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD": [
+    "vendor.mm.enable.qcom_parser=16777215"
+  ],
+  "codecs: DivX DivXHD AVI AC3 ASF AAC QCP DTS 3G2 MP2TS": [
+    "vendor.mm.enable.qcom_parser=3183219"
+  ],
+  "Qualcomm resolver": [
+    "vendor.mm.enable.qcom_parser",
+    "persist.mm.enable.prefetch"
+  ],
+  "System props for the data modules": [
+    "ro.vendor.use_data_netmgrd",
+    "persist.data.netmgrd.qos.enable",
+    "persist.vendor.data.mode"
+  ],
+  "System props for time-services": [
+    "persist.timed."
+  ],
+  "OpenGL ES": [
+    "ro.opengles."
+  ],
+  "System props for BT": [
+    "persist.vendor.btstack.aac_frm_ctl.enabled",
+    "ro.bluetooth.library_name"
+  ],
+  "System prop for RmNet Data": [
+    "persist.rmnet.",
+    "persist.data."
+  ],
+  "Enable tunnel encoding for amrwb": [
+    "tunnel.audio.encode"
+  ],
+  "Enable voice path for PCM VoIP by default": [
+    "use.voice.path.for.pcm.voip"
+  ],
+  "system prop for NFC DT": [
+    "ro.nfc.port"
+  ],
+  "Support for GPU emulation": [
+    "ro.kernel.qemu"
+  ],
+  "Camera persist": [
+    "persist.vendor.camera"
+  ],
+  "Overlay persist": [
+    "persist.vendor.overlay"
+  ],
+  "Sensors persist": [
+    "persist.vendor.sensors"
+  ],
+  "Maximum layer fps for recording": [
+    "ro.media.recorder-max-base-layer-fps"
+  ],
+  "Disable RTT": [
+    "config.disable_rtt"
+  ],
+  "Charger Configuration": [
+    "ro.charger"
+  ],
+  "Launcher Configuration": [
+    "ro.launcher"
+  ],
+  "Does the blur effect consume a lot of resources": [
+    "ro.sf.blurs_are_expensive"
+  ],
+  "Manage screen display content": [
+    "ro.surface_flinger"
+  ],
   "Device Information": [
     "ro.product.",
     "ro.build.",
@@ -57,6 +153,7 @@
   "Others": [
     "debug.",
     "log.",
-    "ro.secure."
+    "ro.secure.",
+    "persist.debug"
   ]
 }
