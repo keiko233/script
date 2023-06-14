@@ -1,4 +1,47 @@
 {
+  "Graphics": [
+    "debug.sf.",
+    "dev.pm.",
+    "persist.demo.hdmirotationlock",
+    "persist.sys.force_sw_gles",
+    "persist.sys.sf.",
+    "ro.hardware.egl",
+    "ro.hardware.vulkan",
+    "ro.kernel.qemu.gles",
+    "vendor.display."
+  ],
+  "Gatekeeper": [
+    "vendor.gatekeeper."
+  ],
+  "FRP": [
+    "ro.frp."
+  ],
+  "DRM": [
+    "drm."
+  ],
+  "Crypto": [
+    "ro.crypto."
+  ],
+  "CoreSight STM": [
+    "persist.debug.coresight."
+  ],
+  "Beluga": [
+    "ro.vendor.beluga"
+  ],
+  "Dolby": [
+    "ro.vendor.dolby",
+    "vendor.audio.dolby"
+  ],
+  "SoC": [
+    "ro.soc."
+  ],
+  "Low Memory Killer": [
+    "ro.lmk."
+  ],
+  "DPM": [
+    "persist.vendor.dpm",
+    "persist.vendor.dpmhalservice."
+  ],
   "WiFi Display": [
     "persist.debug.wfd.",
     "persist.sys.wfd."
@@ -8,7 +51,10 @@
     "ril.",
     "persist.vendor.radio.",
     "ro.telephony.",
-    "telephony."
+    "telephony.",
+    "persist.dbg.",
+    "ro.vendor.radio.",
+    "persist.radio."
   ],
   "Device initialized": [
     "DEVICE_PROVISIONED"
@@ -16,18 +62,20 @@
   "Qualcomm HW Configuration": [
     "qcom.hw."
   ],
-  "Dalvik Configuration": [
+  "Dalvik": [
     "dalvik."
   ],
   "CNE": [
     "persist.vendor.cne.feature"
   ],
-  "system props for the MM modules": [
+  "MM modules": [
     "media.stagefright.",
     "media.aac_51_output_enabled",
     "mmp.enable.3g2",
     "mm.enable.smoothstreaming",
-    "media.settings.xml"
+    "media.settings.xml",
+    "vendor.hw.fm.",
+    "debug.stagefright."
   ],
   "codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD": [
     "vendor.mm.enable.qcom_parser=16777215"
@@ -50,9 +98,12 @@
   "OpenGL ES": [
     "ro.opengles."
   ],
-  "System props for BT": [
-    "persist.vendor.btstack.aac_frm_ctl.enabled",
-    "ro.bluetooth.library_name"
+  "Bluetooth": [
+    "persist.vendor.btstack.",
+    "persist.vendor.bt",
+    "persist.vendor.qcom.bluetooth",
+    "persist.bluetooth",
+    "ro.bluetooth."
   ],
   "System prop for RmNet Data": [
     "persist.rmnet.",
@@ -70,8 +121,10 @@
   "Support for GPU emulation": [
     "ro.kernel.qemu"
   ],
-  "Camera persist": [
-    "persist.vendor.camera"
+  "Camera": [
+    "persist.vendor.camera",
+    "persist.sys.camera.",
+    "ro.hardware.camera"
   ],
   "GNSS": [
     "persist.vendor.overlay.izat.optin"
@@ -104,23 +157,30 @@
   ],
   "System Configuration": [
     "persist.sys.",
-    "persist.service.",
-    "persist.radio."
+    "persist.service."
   ],
   "Network Configuration": [
     "net.",
     "wifi.",
     "mobile."
   ],
-  "Screen Settings": [
+  "Display": [
     "persist.display.",
     "display.",
-    "sys.display."
+    "sys.display.",
+    "ro.sf."
   ],
-  "Audio Settings": [
+  "Audio": [
     "persist.audio.",
+    "persist.vendor.audio",
     "audio.",
-    "sys.audio."
+    "sys.audio.",
+    "ro.audio.",
+    "ro.vendor.audio.",
+    "ro.config.media_vol_default",
+    "ro.config.media_vol_steps",
+    "ro.config.vc_call_vol_steps",
+    "vendor.voice."
   ],
   "Security Settings": [
     "persist.security.",
