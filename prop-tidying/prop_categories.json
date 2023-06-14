@@ -1,15 +1,17 @@
 {
-  "RIL Configuration": [
+  "WiFi Display": [
+    "persist.debug.wfd.",
+    "persist.sys.wfd."
+  ],
+  "Radio": [
     "rild.",
     "ril.",
-    "persist.vendor.radio."
+    "persist.vendor.radio.",
+    "ro.telephony.",
+    "telephony."
   ],
   "Device initialized": [
     "DEVICE_PROVISIONED"
-  ],
-  "IMS Configuration": [
-    "ro.telephony.",
-    "telephony."
   ],
   "Qualcomm HW Configuration": [
     "qcom.hw."
@@ -17,7 +19,7 @@
   "Dalvik Configuration": [
     "dalvik."
   ],
-  "system props for the cne module": [
+  "CNE": [
     "persist.vendor.cne.feature"
   ],
   "system props for the MM modules": [
@@ -37,12 +39,12 @@
     "vendor.mm.enable.qcom_parser",
     "persist.mm.enable.prefetch"
   ],
-  "System props for the data modules": [
+  "NetMgr": [
     "ro.vendor.use_data_netmgrd",
     "persist.data.netmgrd.qos.enable",
     "persist.vendor.data.mode"
   ],
-  "System props for time-services": [
+  "Time": [
     "persist.timed."
   ],
   "OpenGL ES": [
@@ -59,7 +61,7 @@
   "Enable tunnel encoding for amrwb": [
     "tunnel.audio.encode"
   ],
-  "Enable voice path for PCM VoIP by default": [
+  "Enable voice path for PCM VoIP": [
     "use.voice.path.for.pcm.voip"
   ],
   "system prop for NFC DT": [
@@ -71,8 +73,8 @@
   "Camera persist": [
     "persist.vendor.camera"
   ],
-  "Overlay persist": [
-    "persist.vendor.overlay"
+  "GNSS": [
+    "persist.vendor.overlay.izat.optin"
   ],
   "Sensors persist": [
     "persist.vendor.sensors"
