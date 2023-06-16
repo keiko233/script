@@ -1,4 +1,92 @@
 {
+  "Touch Feature.": [
+    "ro.vendor.touchfeature."
+  ],
+  "Thermal": [
+    "ro.vendor.thermal.",
+    "ro.vendor.fps.switch.thermal"
+  ],
+  "Shutdown Timeout": [
+    "ro.build.shutdown_timeout"
+  ],
+  "Support Seamless Update": [
+    "ro.build.ab_update"
+  ],
+  "Display": [
+    "persist.display.",
+    "display.",
+    "sys.display.",
+    "ro.sf.",
+    "ro.vendor.display.",
+    "ro.vendor.soft_backlight.",
+    "ro.vendor.hbm_backlight.",
+    "ro.vendor.localhbm."
+  ],
+  "Audio": [
+    "persist.audio.",
+    "persist.vendor.audio",
+    "audio.",
+    "sys.audio.",
+    "ro.audio.",
+    "ro.vendor.audio.",
+    "ro.config.media_vol_default",
+    "ro.config.media_vol_steps",
+    "ro.config.vc_call_vol_steps",
+    "vendor.voice.",
+    "vendor.audio.",
+    "vendor.audio_hal.",
+    "aaudio.",
+    "ro.qc.sdk.audio."
+  ],
+  "FastCharge": [
+    "persist.vendor.fastchg_enabled",
+    "persist.vendor.accelerate.charge"
+  ],
+  "Fingerprint": [
+    "persist.vendor.sys.fp.",
+    "ro.hardware.fp.",
+    "bt.max.hfpclient."
+  ],
+  "Zygote": [
+    "zygote."
+  ],
+  "WLAN": [
+    "wifi.",
+    "ro.hardware.wlan."
+  ],
+  "USB": [
+    "vendor.usb."
+  ],
+  "Shutdown": [
+    "sys.vendor.shutdown."
+  ],
+  "SSR": [
+    "persist.vendor.ssr."
+  ],
+  "QTEE": [
+    "persist.vendor.qteeconnector."
+  ],
+  "QSPM": [
+    "ro.vendor.qspm."
+  ],
+  "QSD": [
+    "persist.vendor.qcomsysd."
+  ],
+  "Extension Library": [
+    "ro.vendor.extension_library"
+  ],
+  "Perf": [
+    "ro.vendor.perf.",
+    "ro.vendor.perf-hal."
+  ],
+  "NFC": [
+    "ro.nfc.",
+    "ro.vendor.nfc.",
+    "ro.vendor.se."
+  ],
+  "Incremental FS": [
+    "ro.incremental."
+  ],
   "Graphics": [
     "debug.sf.",
     "dev.pm.",
@@ -8,7 +96,10 @@
     "ro.hardware.egl",
     "ro.hardware.vulkan",
     "ro.kernel.qemu.gles",
-    "vendor.display."
+    "vendor.display.",
+    "vendor.gralloc.",
+    "debug.egl.",
+    "ro.vendor.gnss."
   ],
   "Gatekeeper": [
     "vendor.gatekeeper."
@@ -54,7 +145,9 @@
     "telephony.",
     "persist.dbg.",
     "ro.vendor.radio.",
-    "persist.radio."
+    "persist.radio.",
+    "persist.data.df.",
+    "persist.data.wda."
   ],
   "Device initialized": [
     "DEVICE_PROVISIONED"
@@ -68,14 +161,27 @@
   "CNE": [
     "persist.vendor.cne.feature"
   ],
-  "MM modules": [
+  "Media": [
     "media.stagefright.",
     "media.aac_51_output_enabled",
     "mmp.enable.3g2",
     "mm.enable.smoothstreaming",
     "media.settings.xml",
     "vendor.hw.fm.",
-    "debug.stagefright."
+    "debug.stagefright.",
+    "persist.mm.",
+    "persist.sys.mmms.",
+    "persist.sys.mms.",
+    "qcom.hw.aac.",
+    "ro.gfx.driver.",
+    "vendor.mm.",
+    "vendor.media.",
+    "ro.vendor.media.",
+    "av.",
+    "ro.vendor.video_box.",
+    "debug.media.",
+    "debug.config.media.",
+    "ro.vendor.standard.video."
   ],
   "codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD": [
     "vendor.mm.enable.qcom_parser=16777215"
@@ -103,7 +209,9 @@
     "persist.vendor.bt",
     "persist.vendor.qcom.bluetooth",
     "persist.bluetooth",
-    "ro.bluetooth."
+    "ro.bluetooth.",
+    "vendor.bluetooth.",
+    "persist.sys.fflag.override.settings_bluetooth_hearing_aid"
   ],
   "System prop for RmNet Data": [
     "persist.rmnet.",
@@ -124,13 +232,18 @@
   "Camera": [
     "persist.vendor.camera",
     "persist.sys.camera.",
-    "ro.hardware.camera"
+    "ro.hardware.camera",
+    "vendor.camera.",
+    "camera.",
+    "persist.service.camera.",
+    "persist.sys.lmk.camera_minfree_levels"
   ],
   "GNSS": [
     "persist.vendor.overlay.izat.optin"
   ],
-  "Sensors persist": [
-    "persist.vendor.sensors"
+  "Sensors": [
+    "persist.vendor.sensors",
+    "persist.vendor.sensor."
   ],
   "Maximum layer fps for recording": [
     "ro.media.recorder-max-base-layer-fps"
@@ -148,74 +261,10 @@
     "ro.sf.blurs_are_expensive"
   ],
   "Manage screen display content": [
-    "ro.surface_flinger"
+    "ro.surface_flinger",
+    "debug.renderengine."
   ],
-  "Device Information": [
-    "ro.product.",
-    "ro.build.",
-    "ro.vendor."
-  ],
-  "System Configuration": [
-    "persist.sys.",
-    "persist.service."
-  ],
-  "Network Configuration": [
-    "net.",
-    "wifi.",
-    "mobile."
-  ],
-  "Display": [
-    "persist.display.",
-    "display.",
-    "sys.display.",
-    "ro.sf."
-  ],
-  "Audio": [
-    "persist.audio.",
-    "persist.vendor.audio",
-    "audio.",
-    "sys.audio.",
-    "ro.audio.",
-    "ro.vendor.audio.",
-    "ro.config.media_vol_default",
-    "ro.config.media_vol_steps",
-    "ro.config.vc_call_vol_steps",
-    "vendor.voice."
-  ],
-  "Security Settings": [
-    "persist.security.",
-    "security.",
-    "sys.security."
-  ],
-  "Developer Options": [
-    "persist.dev.",
-    "debug.",
-    "sys.dev."
-  ],
-  "Battery Settings": [
-    "persist.battery.",
-    "battery.",
-    "sys.battery."
-  ],
-  "Storage Settings": [
-    "persist.storage.",
-    "storage.",
-    "sys.storage."
-  ],
-  "Timezone Settings": [
-    "persist.timezone.",
-    "timezone.",
-    "sys.timezone."
-  ],
-  "Language Settings": [
-    "persist.language.",
-    "language.",
-    "sys.language."
-  ],
-  "Others": [
-    "debug.",
-    "log.",
-    "ro.secure.",
-    "persist.debug"
+  "System": [
+    "persist.sys."
   ]
 }
